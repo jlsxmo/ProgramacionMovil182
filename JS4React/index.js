@@ -114,5 +114,48 @@ console.log(...nombres, ...edades);
 //import { suma, resta } from "./calculadora.js";
 import * as calc from "./calculadora.js";
 
-console.log(calc.suma(45, 54));
-console.log(calc.resta(45, 5));
+//console.log(calc.suma(45, 54));
+//console.log(calc.resta(45, 5));
+
+// Ejemplo de Promesa
+/*
+const ul = document.createElement('ul');
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+                .then(function(response){
+                    console.log("Carga de datos completada");
+                    return response.json();
+                }).then (function(data){
+                    console.log(data);
+                    data.forEach(function(post){
+                        const li = document.createElement('li');
+                        li.innerText = post.title;
+                        ul.append(li);
+                    });
+                    document.body.append(ul);
+                })
+
+console.log('Cargando HTML');
+console.log('Cargando CSS');
+console.log('Cargando Imágenes');
+*/
+
+// Ejemplo de Promesa con async/await
+
+const ul = document.createElement('ul');
+
+async function cargarDatos(){
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const datos = await response.json();
+    console.log(datos);
+    datos.forEach(function(post){
+        const li = document.createElement('li');
+        li.innerText = post.title;
+        ul.append(li);
+    });
+    document.body.append(ul);
+};
+cargarDatos();
+console.log('Cargando HTML');
+console.log('Cargando CSS');
+console.log('Cargando Imágenes');
