@@ -153,6 +153,7 @@ async function cargarDatos(){
         li.innerText = post.title;
         ul.append(li);
     });
+    
     document.body.append(ul);
 };
 cargarDatos();
