@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import React, { useState } from 'react';
 
 /*
@@ -25,21 +25,26 @@ export default function App() {
 }
 */
 
+/*
 const Texto = ({estilo}) => {
   const [contenido, setContenido] = useState('Hola mundo');
   const actualizarContenido = () => {
     setContenido('State actualizo este texto');
   }
   return (<Text style={[styles.text,estilo]} onPress={actualizarContenido}>{contenido}</Text>)
-}
+}*/
+
 
 export default function App() {
+
+  const [text, setText] = useState('valor default')
+
   return (    
     <View style={styles.container}>
 
-      <Texto estilo={styles.red}/>
-      <Texto estilo={styles.blue}/>
-      <Texto estilo={styles.green}/>
+      <Text> Componente TextInput: {text}</Text>
+      
+      <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
 
       <StatusBar style="auto" />
     </View>
@@ -52,8 +57,18 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
+  input: {
+    backgroundColor: '#dfd5ed',
+    height: 40,
+    width: 150,
+    margin: 10,
+    borderWidth: 2,
+    borderColor: 'gold',
+    padding: 10,
+  },
+  /*
   text:{
     color : 'yellow',
     fontSize : 25,
@@ -71,5 +86,5 @@ const styles = StyleSheet.create({
   green:{
     backgroundColor: 'green',
     //flex: 3,
-  },
+  },*/
 });
