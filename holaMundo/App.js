@@ -1,8 +1,92 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
 import React, { useState } from 'react';
 
-/*
+export default function App() {
+
+  const [text, setText] = useState('valor default')
+  const [submit, setSubmit] = useState('')
+
+  return (    
+    <View style={styles.container}>
+
+      <Text> Componente TextInput: {submit}</Text>
+      
+      <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
+
+      <Button title='Presioname' onPress={()=>{setSubmit(text); alert('Texto enviado')}}/>
+      
+      <TouchableOpacity style={styles.botonOpaco}>
+        <Text>Presiona aquí</Text>
+      </TouchableOpacity>
+
+      <TouchableHighlight style={styles.botonResaltado} onPress={()=>alert('Tocaste el botón')}>
+        <Text>Botón resaltado</Text>
+      </TouchableHighlight>
+
+      <TouchableWithoutFeedback onPress={()=>alert('Tocaste el botón')}>
+        <View style={styles.botonResaltado}>
+          <Text>Botón sin feedback</Text>
+        </View>
+      </TouchableWithoutFeedback>
+      
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    backgroundColor: '#dfd5ed',
+    height: 40,
+    width: 150,
+    margin: 10,
+    borderWidth: 2,
+    borderColor: 'gold',
+    padding: 10,
+  },
+  botonOpaco: {
+    backgroundColor: 'yellow',
+    padding: 10,
+    margin: 10,    
+  },
+  botonResaltado: {
+    backgroundColor: 'gold',
+    padding: 10,
+    margin: 10,    
+  },
+  /*
+  text:{
+    color : 'yellow',
+    fontSize : 25,
+    height: 150,
+    //width: 150,
+  },
+  red:{
+    backgroundColor: 'red',
+    //flex: 1,
+  },
+  blue:{
+    backgroundColor: 'blue',
+    //flex: 2,
+  },
+  green:{
+    backgroundColor: 'green',
+    //flex: 3,
+  },
+  */
+});
+
+
+/* Ejemplos básicos de uso de componentes
 const Texto = ({ contenido, actualizarContenido }) => {
   return (<Text>{contenido}</Text>);
 };
@@ -32,59 +116,45 @@ const Texto = ({estilo}) => {
     setContenido('State actualizo este texto');
   }
   return (<Text style={[styles.text,estilo]} onPress={actualizarContenido}>{contenido}</Text>)
-}*/
+}
+*/
 
+/* Ejemplo de TouchableHighlight
+import React from 'react';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const handlePress = () => {
+    alert('¡Botón presionado!');
+  };
 
-  const [text, setText] = useState('valor default')
-
-  return (    
+  return (
     <View style={styles.container}>
-
-      <Text> Componente TextInput: {text}</Text>
-      
-      <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
-
-      <StatusBar style="auto" />
+      <TouchableOpacity style={styles.button} onPress={handlePress}>
+        <Text style={styles.buttonText}>Presioname</Text>
+      </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
-  input: {
-    backgroundColor: '#dfd5ed',
-    height: 40,
-    width: 150,
-    margin: 10,
-    borderWidth: 2,
-    borderColor: 'gold',
-    padding: 10,
+  button: {
+    backgroundColor: '#841584',
+    padding: 15,
+    borderRadius: 10,
   },
-  /*
-  text:{
-    color : 'yellow',
-    fontSize : 25,
-    height: 150,
-    //width: 150,
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    textAlign: 'center',
   },
-  red:{
-    backgroundColor: 'red',
-    //flex: 1,
-  },
-  blue:{
-    backgroundColor: 'blue',
-    //flex: 2,
-  },
-  green:{
-    backgroundColor: 'green',
-    //flex: 3,
-  },*/
 });
+
+export default App;
+*/
