@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Alert, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import React, { useState } from 'react';
 
 export default function App() {
@@ -8,44 +8,52 @@ export default function App() {
   const [password, setPassword] = useState('');
 
   const Guardar = () => {
+
+    /*alert(`Formulario Enviado\n\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`);*/
+
+    
     Alert.alert(
-      `Formulario Enviado`, `\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`      
+      `Formulario Enviado`, `\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`
     );
+    
   };
 
   return (
-    <View style={styles.container}>
+
+    <ImageBackground source={require('./assets/fondo.png')} style={styles.container}>
       <View style={styles.form}>
 
-      <Text style={styles.label}>Nombre:</Text>
-      <TextInput
-        style={styles.input}
-        value={nombre}
-        onChangeText={setNombre}
-      />
+        <Text style={styles.label}>Nombre:</Text>
+        <TextInput
+          style={styles.input}
+          value={nombre}
+          onChangeText={setNombre}
+        />
 
-      <Text style={styles.label}>Email:</Text>
-      <TextInput
-        style={styles.input}
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-      />
+        <Text style={styles.label}>Email:</Text>
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+        />
 
-      <Text style={styles.label}>Password:</Text>
-      <TextInput
-        style={styles.input}
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      
-      <TouchableOpacity style={styles.button} onPress={Guardar}>
-        <Text style={styles.buttonText}>GUARDAR</Text>
-      </TouchableOpacity>
-        
-      </View>      
-    </View>
+        <Text style={styles.label}>Password:</Text>
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+
+        <TouchableOpacity style={styles.button} onPress={Guardar}>
+          <Text style={styles.buttonText}>GUARDAR</Text>
+        </TouchableOpacity>
+
+      </View>
+    </ImageBackground>
+
+
   );
 }
 
@@ -67,7 +75,7 @@ const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 10,
   },
-  input: {  
+  input: {
     height: 40,
     borderColor: 'gold',
     borderWidth: 4,
