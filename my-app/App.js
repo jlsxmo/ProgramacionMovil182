@@ -9,7 +9,9 @@ export default function App() {
 
   const Guardar = () => {
 
-    /*alert(`Formulario Enviado\n\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`);*/
+    /* Para la web
+    alert(`Formulario Enviado\n\nNombre: ${nombre}\nEmail: ${email}\nPassword: ${password}`);
+    */
 
     
     Alert.alert(
@@ -60,7 +62,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E5E7E9',
+    backgroundColor: '#E5E7E9',    
     alignItems: 'center',
     justifyContent: 'center',
   },

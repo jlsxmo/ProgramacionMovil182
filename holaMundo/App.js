@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, ScrollView, Dimensions } from 'react-native';
 import React, { useState } from 'react';
 
 export default function App() {
@@ -10,11 +10,47 @@ export default function App() {
   return (    
     <View style={styles.container}>
 
+      <ScrollView style={styles.ScrollView}>  
+      
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
+      <Text> Componente TextInput: {submit}</Text>
       <Text> Componente TextInput: {submit}</Text>
       
       <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
 
       <Button title='Presioname' onPress={()=>{setSubmit(text); alert('Texto enviado')}}/>
+
+      </ScrollView>
       
       <TouchableOpacity style={styles.botonOpaco}>
         <Text>Presiona aquí</Text>
@@ -62,6 +98,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'gold',
     padding: 10,
     margin: 10,    
+  },
+  ScrollView: {
+    // Es más fácil usar Dimensions para obtener el ancho de la pantalla de cualquier dispositivo que usar un porcentaje
+    width: Dimensions.get('window').width, // Ancho de la pantalla
   },
   /*
   text:{
