@@ -1,71 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, ScrollView, Dimensions } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+// import React, { useState } from 'react';
 
 export default function App() {
-
-  const [text, setText] = useState('valor default')
-  const [submit, setSubmit] = useState('')
 
   return (    
     <View style={styles.container}>
 
-      <ScrollView style={styles.ScrollView}>  
-      
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      <Text> Componente TextInput: {submit}</Text>
-      
-      <TextInput style={styles.input} placeholder='Soy una entrada' onChangeText={(t)=>setText(t)} value={text}/>
-
-      <Button title='Presioname' onPress={()=>{setSubmit(text); alert('Texto enviado')}}/>
-
-      </ScrollView>
-      
-      <TouchableOpacity style={styles.botonOpaco}>
-        <Text>Presiona aquí</Text>
-      </TouchableOpacity>
-
-      <TouchableHighlight style={styles.botonResaltado} onPress={()=>alert('Tocaste el botón')}>
-        <Text>Botón resaltado</Text>
-      </TouchableHighlight>
-
-      <TouchableWithoutFeedback onPress={()=>alert('Tocaste el botón')}>
-        <View style={styles.botonResaltado}>
-          <Text>Botón sin feedback</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      
+      <FlatList data={
+        [
+          {key: '1', name: 'Juan'},
+          {key: '2', name: 'Pedro'},
+          {key: '3', name: 'Maria'},
+          {key: '4', name: 'Ana'},
+          {key: '5', name: 'Jose'},
+          {key: '6', name: 'Carlos'},
+          {key: '7', name: 'Luis'},
+          {key: '8', name: 'Jorge'},
+          {key: '9', name: 'Rosa'},
+          {key: '10', name: 'Laura'},
+          {key: '11', name: 'Luisa'},
+          {key: '12', name: 'Marta'},
+          {key: '13', name: 'Carmen'},
+          {key: '14', name: 'Lucia'},
+          {key: '15', name: 'Sofia'},
+          {key: '16', name: 'Pablo'},
+          {key: '17', name: 'Fernando'},
+          {key: '18', name: 'Ricardo'},
+          {key: '19', name: 'Javier'},
+          {key: '20', name: 'Roberto'},
+          {key: '21', name: 'Miguel'},
+          {key: '22', name: 'Eduardo'},
+          {key: '23', name: 'Ismael'},
+          {key: '24', name: 'Alfredo'},
+          {key: '25', name: 'Rodrigo'},          
+        ]
+      }
+      renderItem={({item}) => <Text style={styles.item}>{item.name}</Text>}      
+      />
 
       <StatusBar style="auto" />
     </View>
@@ -77,52 +49,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
+    paddingTop: 70,
   },
-  input: {
-    backgroundColor: '#dfd5ed',
-    height: 40,
-    width: 150,
-    margin: 10,
-    borderWidth: 2,
-    borderColor: 'gold',
+  item: {
     padding: 10,
+    fontSize: 30,
+    height: 50,
+    borderColor: 'silver',
+    borderBottomWidth: 4,
   },
-  botonOpaco: {
-    backgroundColor: 'yellow',
-    padding: 10,
-    margin: 10,    
-  },
-  botonResaltado: {
-    backgroundColor: 'gold',
-    padding: 10,
-    margin: 10,    
-  },
-  ScrollView: {
-    // Es más fácil usar Dimensions para obtener el ancho de la pantalla de cualquier dispositivo que usar un porcentaje
-    width: Dimensions.get('window').width, // Ancho de la pantalla
-  },
-  /*
-  text:{
-    color : 'yellow',
-    fontSize : 25,
-    height: 150,
-    //width: 150,
-  },
-  red:{
-    backgroundColor: 'red',
-    //flex: 1,
-  },
-  blue:{
-    backgroundColor: 'blue',
-    //flex: 2,
-  },
-  green:{
-    backgroundColor: 'green',
-    //flex: 3,
-  },
-  */
 });
 
 
