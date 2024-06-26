@@ -1,44 +1,83 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, SectionList } from 'react-native';
 // import React, { useState } from 'react';
 
 export default function App() {
 
-  return (    
+  const data = [{key: '1', name: 'Juan'}, 
+    {key: '2', name: 'Pedro'}, 
+    {key: '3', name: 'Maria'},
+    {key: '4', name: 'Ana'},
+    {key: '5', name: 'Jose'},
+    {key: '6', name: 'Luis'},
+    {key: '7', name: 'Carlos'},
+    {key: '8', name: 'Javier'},
+    {key: '9', name: 'Ricardo'},
+    {key: '10', name: 'Jorge'},
+    {key: '11', name: 'Miguel'},
+  ];
+
+  return ( 
+    
+    
+
     <View style={styles.container}>
 
-      <FlatList data={
-        [
-          {key: '1', name: 'Juan'},
-          {key: '2', name: 'Pedro'},
-          {key: '3', name: 'Maria'},
-          {key: '4', name: 'Ana'},
-          {key: '5', name: 'Jose'},
-          {key: '6', name: 'Carlos'},
-          {key: '7', name: 'Luis'},
-          {key: '8', name: 'Jorge'},
-          {key: '9', name: 'Rosa'},
-          {key: '10', name: 'Laura'},
-          {key: '11', name: 'Luisa'},
-          {key: '12', name: 'Marta'},
-          {key: '13', name: 'Carmen'},
-          {key: '14', name: 'Lucia'},
-          {key: '15', name: 'Sofia'},
-          {key: '16', name: 'Pablo'},
-          {key: '17', name: 'Fernando'},
-          {key: '18', name: 'Ricardo'},
-          {key: '19', name: 'Javier'},
-          {key: '20', name: 'Roberto'},
-          {key: '21', name: 'Miguel'},
-          {key: '22', name: 'Eduardo'},
-          {key: '23', name: 'Ismael'},
-          {key: '24', name: 'Alfredo'},
-          {key: '25', name: 'Rodrigo'},          
-        ]
-      }
-      renderItem={({item}) => <Text style={styles.item}>{item.name}</Text>}      
+      <SectionList
+
+        sections={[
+          {title: 'Grupo A', 
+            data: [
+              {key: '1', name: 'Juan'}, 
+              {key: '2', name: 'Pedro'}, 
+              {key: '3', name: 'Maria'},
+              {key: '4', name: 'Ana'},
+              {key: '5', name: 'Jose'},
+              {key: '6', name: 'Luis'},
+              {key: '7', name: 'Carlos'},
+              {key: '8', name: 'Javier'},
+              {key: '9', name: 'Ricardo'},
+              {key: '10', name: 'Jorge'},
+              {key: '11', name: 'Miguel'},
+            ]
+          },
+          {title: 'Grupo B', 
+            data: [
+              {key: '12', name: 'Juan'}, 
+              {key: '13', name: 'Pedro'}, 
+              {key: '14', name: 'Maria'},
+              {key: '15', name: 'Ana'},
+              {key: '16', name: 'Jose'},
+              {key: '17', name: 'Luis'},
+              {key: '18', name: 'Carlos'},
+              {key: '19', name: 'Javier'},
+              {key: '20', name: 'Ricardo'},
+              {key: '21', name: 'Jorge'},
+              {key: '22', name: 'Miguel'},
+            ]
+          },
+          {title: 'Grupo C',
+            data: [
+              {key: '23', name: 'Juan'}, 
+              {key: '24', name: 'Pedro'}, 
+              {key: '25', name: 'Maria'},
+              {key: '26', name: 'Ana'},
+              {key: '27', name: 'Jose'},
+              {key: '28', name: 'Luis'},
+              {key: '29', name: 'Carlos'},
+              {key: '30', name: 'Javier'},
+              {key: '31', name: 'Ricardo'},
+              {key: '32', name: 'Jorge'},
+              {key: '33', name: 'Miguel'},
+            ]
+          }
+        ]}
+        renderItem={({item})=> <Text style={styles.item}>{item.name}</Text>}
+        renderSectionHeader={({section}) => <Text style={styles.section}>{section.title}</Text>}
+
       />
 
+     
       <StatusBar style="auto" />
     </View>
   );
@@ -55,11 +94,19 @@ const styles = StyleSheet.create({
   },
   item: {
     padding: 10,
-    fontSize: 30,
-    height: 50,
-    borderColor: 'silver',
-    borderBottomWidth: 4,
+    fontSize: 20,
+    height: 34,
+    borderBottomColor: 'silver',
+    borderBottomWidth: 1,
   },
+  section: {
+    color: 'blue',
+    fontSize:30,
+    fontWeight:'bold',
+    backgroundColor: 'gold',
+    paddingTop: 4,
+    paddingBottom: 4,
+  }
 });
 
 
