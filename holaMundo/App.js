@@ -133,3 +133,13 @@ const styles = StyleSheet.create({
 
 export default App;
 */
+
+/*
+Crear una aplicación Móvil que funcione como un buscador de Películas usando una
+lista definida para la búsqueda
+Requerimientos:
+1. Si el usuario no escribe nada en el textInput y presiona el botón se debe mostrar
+todo el contenido de la lista
+2. La búsqueda puede ser por el titulo completo de la película a parte del titulo
+3. En caso de no encontrar coincidencias avisa al usuario con un Alert
+*/
