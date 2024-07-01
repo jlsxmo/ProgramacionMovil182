@@ -46,7 +46,7 @@ export default function App() {
   };  
 
   return (
-    <ImageBackground source={require('./assets/fondo.jpg')} style={styles.fondo}>
+    <ImageBackground source={require('./assets/fondo.jpeg')} style={styles.fondo}>
       
       <Text style={styles.encabezado}>
         Buscador de Películas
@@ -76,14 +76,14 @@ export default function App() {
 const styles = StyleSheet.create({
  fondo: {
     flex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width,    
   },
   encabezado: {
     fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     paddingTop: 40,
+    color: 'gold',
   },
   buscador: {
     backgroundColor: 'white',
@@ -114,10 +114,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   item: {
+    color: 'white',
     padding: 10,
     fontSize: 18,
+    fontWeight: 'bold',
     height: 44,
-    borderBottomColor: 'silver',
+    borderBottomColor: 'gold',
     borderBottomWidth: 2,
   },
 
