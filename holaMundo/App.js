@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, SectionList, ActivityIndicator } from 'react-native';
 import React, { useState, useEffect } from 'react';
+import Prueba from './screens/prueba';
 
 export default function App() {
 
+
+  
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,19 +24,28 @@ export default function App() {
       </View>
     );
   }
+  
+
+  /*
   return ( 
     
-    <View style={styles.container}>
+    <View style={styles.container}>      
       
       <Text>USUARIOS CARGADOS</Text>
 
       <FlatList data={user}    
       renderItem={({item}) => <Text style={styles.item}>{item.username} {item.address.city}</Text>}      
-      />
-           
+      />      
+                 
       <StatusBar style="auto" />
+      
+      <Prueba />
     </View>
+
+    
+    
   );
+  */
 }
 
 const styles = StyleSheet.create({
@@ -132,14 +144,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-*/
-
-/*
-Crear una aplicación Móvil que funcione como un buscador de Películas usando una
-lista definida para la búsqueda
-Requerimientos:
-1. Si el usuario no escribe nada en el textInput y presiona el botón se debe mostrar
-todo el contenido de la lista
-2. La búsqueda puede ser por el titulo completo de la película a parte del titulo
-3. En caso de no encontrar coincidencias avisa al usuario con un Alert
 */
